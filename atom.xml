@@ -6,7 +6,7 @@
   <link href="https://citrus-ano.github.io/atom.xml" rel="self"/>
   
   <link href="https://citrus-ano.github.io/"/>
-  <updated>2021-11-17T05:33:00.000Z</updated>
+  <updated>2021-12-14T14:24:41.000Z</updated>
   <id>https://citrus-ano.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Win10 Anaconda搭建Pytorch-gpu</title>
+    <link href="https://citrus-ano.github.io/2021/12/14/Win10-Anaconda%E6%90%AD%E5%BB%BAPytorch-gpu/"/>
+    <id>https://citrus-ano.github.io/2021/12/14/Win10-Anaconda%E6%90%AD%E5%BB%BAPytorch-gpu/</id>
+    <published>2021-12-14T14:24:41.000Z</published>
+    <updated>2021-12-14T14:24:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="QUICK-START"><a href="#QUICK-START" class="headerlink" title="QUICK START"></a>QUICK START</h2><hr><h4 id="1、新建Pytorch-gpu环境"><a href="#1、新建Pytorch-gpu环境" class="headerlink" title="1、新建Pytorch-gpu环境"></a>1、新建Pytorch-gpu环境</h4><p>​    在Anaconda Nevigator中CREATE，取名为pytorch-gpu</p><h4 id="2、打开Anaconda-Prompt"><a href="#2、打开Anaconda-Prompt" class="headerlink" title="2、打开Anaconda Prompt"></a>2、打开Anaconda Prompt</h4><p>​    1）进入pytorch-gpu环境</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda activate pytorch-gpu</span><br></pre></td></tr></table></figure><p>​    2）查看已安装的module</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda list</span><br></pre></td></tr></table></figure><p>​    3）若有pytorch（如cpu）版本需先进行卸载</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda uninstall pytorch</span><br></pre></td></tr></table></figure><h4 id="3、安装CUDA"><a href="#3、安装CUDA" class="headerlink" title="3、安装CUDA"></a>3、安装CUDA</h4><p>​    1）选择合适的CUDA版本（当前pytorch官网支持：CUDA 10.2和CUDA 11.3）</p><p><a href="https://developer.nvidia.com/cuda-toolkit-archive">多版本CUDA网址</a></p><p>选择安装CUDA 11.3.1，并将CUDA安装在默认位置中</p><p>​    2）添加CUDA环境变量（其他版本将v11.3改为v.xx即可）</p><ul><li>直接在系统变量中新建</li></ul><table><thead><tr><th>变量</th><th>值</th></tr></thead><tbody><tr><td>CUDA_LIB_PATH</td><td>%CUDA_PATH%\lib\x64</td></tr><tr><td>CUDA_PATH</td><td>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.3</td></tr><tr><td>CUDA_PATH_V11_3</td><td>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.3</td></tr><tr><td>CUDA_SDK_BIN_PATH</td><td>%CUDA_SDK_PATH%\bin\win64</td></tr><tr><td>CUDA_SDK_LIB_PATH</td><td>%CUDA_SDK_PATH%\common\lib\x64</td></tr><tr><td>CUDA_SDK_PATH</td><td>C:\ProgramData\NVIDIA Corporation\CUDA Samples\v11.3</td></tr></tbody></table><ul><li>在cmd中测试CUDA是否安装成功</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvcc -V</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">nvcc: NVIDIA (R) Cuda compiler driver</span><br><span class="line">Copyright (c) 2005-2021 NVIDIA Corporation</span><br><span class="line">Built on Mon_May__3_19:41:42_Pacific_Daylight_Time_2021</span><br><span class="line">Cuda compilation tools, release 11.3, V11.3.109</span><br><span class="line">Build cuda_11.3.r11.3/compiler.29920130_0</span><br></pre></td></tr></table></figure><ul><li>查看环境变量是否搭建成功</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set cuda</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CUDA_BIN_PATH=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.3\bin</span><br><span class="line">CUDA_LIB_PATH=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.3\lib\x64</span><br><span class="line">CUDA_PATH=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.3</span><br><span class="line">CUDA_PATH_V11_3=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.3</span><br><span class="line">CUDA_SDK_BIN_PATH=C:\ProgramData\NVIDIA Corporation\CUDA Samples\v11.3\bin\win64</span><br><span class="line">CUDA_SDK_LIB_PATH=C:\ProgramData\NVIDIA Corporation\CUDA Samples\v11.3\common\lib\x64</span><br><span class="line">CUDA_SDK_PATH=C:\ProgramData\NVIDIA Corporation\CUDA Samples\v11.3</span><br></pre></td></tr></table></figure><p>​    3）安装cuDNN（需要和CUDA的版本对应）</p><p><a href="https://developer.nvidia.com/rdp/cudnn-archive">cuDNN官网下载（需注册)</a></p><ul><li>下载cuDNN v8.2.1 for CUDA 11.x</li><li>下载完成后，解压压缩包，将其中的bin、include、lib文件夹中的文件分别放到CUDA目录下的对应文件夹中</li></ul><p>​    4）离线安装GPU版pytorch</p><p><a href="https://download.pytorch.org/whl/torch_stable.html">离线安装pytorch地址</a></p><ul><li>下载其中的torch和torchvision（cu113：CUDA v11.3 cp38：python3.8）</li></ul><p><a href="https://download.pytorch.org/whl/cu113/torch-1.10.0%2Bcu113-cp38-cp38-win_amd64.whl">cu113/torch-1.10.0%2Bcu113-cp38-cp38-win_amd64.whl</a></p><p><a href="https://download.pytorch.org/whl/cu113/torchvision-0.11.0%2Bcu113-cp38-cp38-win_amd64.whl">cu113/torchvision-0.11.0%2Bcu113-cp38-cp38-win_amd64.whl</a></p><ul><li>将下载后的文件放到env文件夹中对应环境文件夹中（使用pip安装，将pkg_name.whl换为下载文件的文件名）</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pkg_name.whl</span><br></pre></td></tr></table></figure><p>​    5）测试gpu-Pytorch是否可以使用</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import pytorch</span><br><span class="line">print(torch.__version__)</span><br><span class="line">print(torch.cuda.is_available())</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;QUICK-START&quot;&gt;&lt;a href=&quot;#QUICK-START&quot; class=&quot;headerlink&quot; title=&quot;QUICK START&quot;&gt;&lt;/a&gt;QUICK START&lt;/h2&gt;&lt;hr&gt;
+&lt;h4 id=&quot;1、新建Pytorch-gpu环境&quot;&gt;&lt;a hr</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>嘤嘤嘤自用Windows装机清单~</title>
