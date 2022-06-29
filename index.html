@@ -176,6 +176,104 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://citrus-ano.github.io/2022/06/27/Mac%20OS%20Lua%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E4%B8%91%E8%90%8C%E9%A3%8E%E8%A7%81%E5%B9%BD%E9%A6%99.png">
+      <meta itemprop="name" content="CITRUS-Ano">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Severely addicted to caramel macchiato">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/06/27/Mac%20OS%20Lua%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="post-title-link" itemprop="url">Mac OS Lua环境搭建</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-06-27 18:31:06 / 修改时间：21:05:47" itemprop="dateCreated datePublished" datetime="2022-06-27T18:31:06+08:00">2022-06-27</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="QUICK-START"><a href="#QUICK-START" class="headerlink" title="QUICK START"></a>QUICK START</h2><h3 id="进入官网下载源代码"><a href="#进入官网下载源代码" class="headerlink" title="进入官网下载源代码"></a>进入官网下载源代码</h3><ol>
+<li><p><a target="_blank" rel="noopener" href="https://www.lua.org/download.html">&gt;Lua Download</a></p>
+</li>
+<li><p>下载后缀为tar.gz的文件并解压放入用户文件夹中</p>
+</li>
+</ol>
+<h3 id="安装Lua环境"><a href="#安装Lua环境" class="headerlink" title="安装Lua环境"></a>安装Lua环境</h3><ol>
+<li>使用终端进入Lua文件夹中</li>
+<li>测试并安装</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make all test</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>测试安装是否成功</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lua -v</span><br></pre></td></tr></table></figure>
+
+<p>显示版本号即为安装成功</p>
+<h3 id="安装luarocks（用于安装第三方库）"><a href="#安装luarocks（用于安装第三方库）" class="headerlink" title="安装luarocks（用于安装第三方库）"></a>安装luarocks（用于安装第三方库）</h3><ol>
+<li>进入luarocks的GitHub仓库</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://github.com/luarocks/luarocks">&gt;luarocks</a></p>
+<ol start="2">
+<li>进入macOS文档</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://github.com/luarocks/luarocks/wiki/Installation-instructions-for-macOS">&gt;luarokcs installation instructions for macOS</a></p>
+<ol start="3">
+<li>使用Homebrew安装</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br><span class="line">brew install luarocks</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>通过luarocks安装第三方库</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://github.com/luarocks/luarocks/wiki/Using-LuaRocks">&gt;Using LuaRocks</a></p>
+<p>使用luarocks安装一个网络请求库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo luarocks install luasocket</span><br></pre></td></tr></table></figure>
+
+<p>使用luarocks安装一个JSON处理库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">luarocks install dkjson</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://citrus-ano.github.io/2021/12/14/Win10-Anaconda%E6%90%AD%E5%BB%BAPytorch-gpu/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1160,7 +1258,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
